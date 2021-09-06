@@ -5,8 +5,24 @@
     box-sizing: border-box;
 }
 
+header{
+    width: 100%;
+    height: 80px;
+    background: #FF7E06;
+    display: flex;
+    align-items: center;
+}
+
+header p{
+    color: #fff;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding: 20px;
+}
+
 .container-app{
-    padding: 40px;
+    padding: 60px;
 }
 
 .title-main{
@@ -14,7 +30,7 @@
 }
 
 .title-product{
-    color: brown;
+    color: #fd7a00;
 }
 
 .item-list{
