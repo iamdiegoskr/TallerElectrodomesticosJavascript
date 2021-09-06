@@ -1,0 +1,28 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-app{
+    padding: 40px;
+}
+
+.title-main{
+    margin-bottom: 30px;
+}
+
+.title-product{
+    color: brown;
+}
+
+.item-list{
+    margin-bottom: 30px;
+}
+
+.item-list span{
+    color: #4b870f;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}

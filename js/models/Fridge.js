@@ -5,6 +5,7 @@ export default class Fridge extends HomeAppliances{
     constructor(consumption,origin,capacity){
         super(consumption,origin);
         this.capacity = capacity;
+        this.price = this.getPriceTotal;
     }
 
     get getCapacity(){
@@ -28,6 +29,17 @@ export default class Fridge extends HomeAppliances{
             priceBase+=surplusPriceToPay;
         }
         return priceBase;
+    }
+
+    get getNameHomeAppliances(){
+        return "Nevera";
+    }
+
+    get description(){
+        return `${this.getNameHomeAppliances} ->
+            Origen : ${this.origin}
+            Tipo consumo : ${this.consumption}
+            Capacidad en litros : ${this.capacity} Kilogramos`
     }
 
 }

@@ -6,6 +6,7 @@ export default class Tv extends HomeAppliances{
         super(consumption,origin);
         this.inches = inches;
         this.isTdt = isTdt;
+        this.price = this.getPriceTotal;
     }
 
     get getInches(){
@@ -14,6 +15,10 @@ export default class Tv extends HomeAppliances{
 
     get getIsTdt(){
         return this.isTdt
+    }
+
+    getResponseTdt(){
+        return (this.isTdt)?"SI":"NO";
     }
 
     get getPriceTotal(){
@@ -29,6 +34,19 @@ export default class Tv extends HomeAppliances{
 
         return priceBase;
 
+    }
+
+
+    get getNameHomeAppliances(){
+        return "Televisor";
+    }
+
+    get description(){
+        return `${this.getNameHomeAppliances} ->
+            Origen : ${this.origin}
+            Tipo consumo : ${this.consumption}
+            Pulgadas : ${this.inches}
+            Tiene tdt ? ${this.getResponseTdt()}`
     }
 
 }
