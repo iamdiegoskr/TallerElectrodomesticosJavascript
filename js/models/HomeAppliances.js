@@ -10,7 +10,7 @@ export default class HomeAppliances{
     }
 
     getPriceConsumption(){
-        switch(this.consumption){
+        switch(this.consumption.toUpperCase()){
             case 'A':
                 return 450000;
             case 'B':
@@ -22,8 +22,12 @@ export default class HomeAppliances{
         }
     }
 
-    get getPriceBaseTotal(){
-        return this.getPriceOrigin + this.getPriceConsumption;
+    getPriceBase(){
+        return this.getPriceOrigin() + this.getPriceConsumption();
+    }
+
+    get getPriceTotal(){
+        return this.getPriceBase();
     }
 
 }
