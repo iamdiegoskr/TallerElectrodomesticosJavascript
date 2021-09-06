@@ -37,8 +37,8 @@ export default class Fridge extends HomeAppliances{
 
     get description(){
         return `${this.getNameHomeAppliances} ->
-            Origen : ${this.origin}
-            Tipo consumo : ${this.consumption}
+            Origen : ${this.origin},
+            Tipo consumo : ${this.consumption},
             Capacidad en litros : ${this.capacity} Kilogramos`
     }
 

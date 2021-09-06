@@ -43,9 +43,9 @@ export default class Tv extends HomeAppliances{
 
     get description(){
         return `${this.getNameHomeAppliances} ->
-            Origen : ${this.origin}
-            Tipo consumo : ${this.consumption}
-            Pulgadas : ${this.inches}
+            Origen : ${this.origin},
+            Tipo consumo : ${this.consumption},
+            Pulgadas : ${this.inches},
             Tiene tdt ? ${this.getResponseTdt()}`
     }
 

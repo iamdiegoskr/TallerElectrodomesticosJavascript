@@ -37,8 +37,8 @@ export default class HomeAppliances{
     }
 
     get description(){
-        return `${this.getNameHomeAppliances} -> 
-            Origen : ${this.origin}
+        return `${this.getNameHomeAppliances} ->
+            Origen : ${this.origin},
             Tipo consumo : ${this.consumption}`
     }
 

@@ -4,6 +4,7 @@ import HomeAppliances from "./models/HomeAppliances.js";
 
 let content = document.querySelector(".section-content");
 let list = document.querySelector(".list-content");
+let priceTotalSpan = document.querySelector(".price-total");
 
 let misELectrodomesticos = [];
 
@@ -31,15 +32,25 @@ const renderList = ()=>{
 
         let productItem =
             `<li class='item-list'>
-                <h2 class='title-product'>Electrodomestico ${count}</h2>
-                <h3>${product.getNameHomeAppliances}</h3>
+                <h3 class='title-product'>Electrodomestico ${count}</h3>
+                <h4>${product.getNameHomeAppliances}</h4>
                 <p>${product.description}</p>
                 <p>Precio : <span> $ ${product.getPriceTotal}</span></p>
             </li>`;
         list.insertAdjacentHTML('beforeend', productItem);
     })
 
+    priceTotalSpan.innerHTML = `$ ${totalAllProduces(misELectrodomesticos)}`;
 
+}
+
+const totalAllProduces = (ProductsCollection)=> {
+    let total = 0;
+    ProductsCollection.forEach((product)=>{
+        total+= product.getPriceTotal;
+    })
+
+    return total;
 }
 
 renderList(misELectrodomesticos);

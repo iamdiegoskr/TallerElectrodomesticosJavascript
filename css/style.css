@@ -42,3 +42,13 @@ header p{
     font-weight: bold;
     letter-spacing: 1.2px;
 }
+
+
+.price-all{
+    font-size: 1.4em;
+}
+
+.price-total{
+    color: rgb(5 197 120);
+    font-weight: bold;
+}
