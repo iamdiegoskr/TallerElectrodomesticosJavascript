@@ -1,15 +1,15 @@
-class HomeApliances{
+export default class HomeAppliances{
 
     constructor(consumption,origin){
         this.consumption = consumption;
         this.origin = origin;
     }
 
-    get  getPriceOrigin(){
+    getPriceOrigin(){
         return (this.origin=="nacional")? 250000 : 350000;
     }
 
-    get  getPriceConsumption(){
+    getPriceConsumption(){
         switch(this.consumption){
             case 'A':
                 return 450000;
@@ -20,6 +20,10 @@ class HomeApliances{
             default:
                 return 0
         }
+    }
+
+    get getPriceBaseTotal(){
+        return this.getPriceOrigin + this.getPriceConsumption;
     }
 
 }
