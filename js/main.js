@@ -5,7 +5,7 @@ import { renderFormGeneral, renderFromFridge, renderFormTv } from "./utils/rende
 
 
 
-const ejemploBoton = document.querySelector(".buttonexample");
+const buttonSaveProduct = document.querySelector(".btn-save");
 const formData = document.querySelector('#form-data')
 
 let list = document.querySelector(".list-content");
@@ -16,8 +16,8 @@ let radioTv = document.querySelector("#tv");
 let radioFridge = document.querySelector("#fridge");
 
 
-ejemploBoton.addEventListener('click',()=>{
-    sendData()
+buttonSaveProduct.addEventListener('click',()=>{
+    saveProduct()
 })
 
 
@@ -44,26 +44,6 @@ function clearForm(element){
     }
 }
 
-/*function renderFormGeneral(){
-    let htmlForm =  `
-    <label>Seleccione el origen del electrodomestico</label>
-    <select name="comsuption" id="comsuption">
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-    </select>
-    <br>
-    <label>Seleccione el origen del electrodomestico</label>
-    <select name="origin" id="origin">
-        <option value="nacional">Nacional</option>
-        <option value="importado">Importado</option>
-    </select>
-    `;
-
-    formData.insertAdjacentHTML('beforeend',htmlForm);
-
-}*/
-
 
 let misELectrodomesticos = [];
 
@@ -81,13 +61,10 @@ let misELectrodomesticos = [];
 // misELectrodomesticos.push(nevera2);
 
 
-export function sendData(){
-
-    let input =  `<input type="text">`;
-    formData.insertAdjacentHTML('beforeend',input);
+function saveProduct(){
+    console.log("Enviando form")
 
 }
-
 
 
 

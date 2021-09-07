@@ -60,3 +60,11 @@ header p{
 .my-form > *{
     margin-bottom: 24px;
 }
+
+.btn-save{
+    padding: 8px;
+    color: white;
+    background: #47bf47;
+    border: none;
+    border-radius: 5px;
+}
