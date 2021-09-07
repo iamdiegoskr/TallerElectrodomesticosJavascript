@@ -39,6 +39,7 @@ function clearForm(element){
 
 //Productos agregados
 let misELectrodomesticos = [];
+let inventory = new Inventory();
 
 
 function saveProduct(){
