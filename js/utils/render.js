@@ -44,7 +44,7 @@ export function renderFormTv(formData){
 
 function baseForm(){
     return `
-    <label>Seleccione el origen del electrodomestico</label>
+    <label>Seleccione el tipo del consumo electrodomestico</label>
     <select name="comsuption" id="comsuption">
         <option value="A" id="a">A</option>
         <option value="B" id="b">B</option>

@@ -2,8 +2,7 @@ import Fridge  from "./models/Fridge.js";
 import Tv from "./models/Tv.js";
 import HomeAppliances from "./models/HomeAppliances.js";
 import { renderFormGeneral, renderFromFridge, renderFormTv } from "./utils/render.js";
-
-
+import Inventory from "./models/Inventory.js";
 
 const buttonSaveProduct = document.querySelector(".btn-save");
 const formData = document.querySelector('#form-data')
@@ -16,10 +15,7 @@ let radioTv = document.querySelector("#tv");
 let radioFridge = document.querySelector("#fridge");
 
 
-buttonSaveProduct.addEventListener('click',saveProduct)
-radioGeneral.addEventListener('change',changeRenderForm);
-radioTv.addEventListener('change',changeRenderForm);
-radioFridge.addEventListener('change',changeRenderForm);
+
 
 function changeRenderForm(){
 
@@ -54,8 +50,6 @@ function saveProduct(){
     }else{
         registerTv();
     }
-
-
 }
 
 function registerTv(){
@@ -128,16 +122,13 @@ function getValueComsuption(){
 //Renderizar la lista en la pantalla.
 const renderList = ()=>{
 
-    let count=0
     list.innerHTML = "";
 
-    misELectrodomesticos.forEach((product)=>{
-
-        count++;
+    misELectrodomesticos.forEach((product, index)=>{
 
         let productItem =
             `<li class='item-list'>
-                <h3 class='title-product'>Electrodomestico ${count}</h3>
+                <h3 class='title-product'>Electrodomestico ${index+1}</h3>
                 <h4>${product.getNameHomeAppliances}</h4>
                 <p>${product.description}</p>
                 <p>Precio : <span> $ ${product.getPriceTotal}</span></p>
@@ -159,6 +150,12 @@ const totalAllProduces = (ProductsCollection)=> {
 
     return total;
 }
+
+
+buttonSaveProduct.addEventListener('click',saveProduct)
+radioGeneral.addEventListener('change',changeRenderForm);
+radioTv.addEventListener('change',changeRenderForm);
+radioFridge.addEventListener('change',changeRenderForm);
 
 changeRenderForm();
 renderList(misELectrodomesticos);
