@@ -67,4 +67,5 @@ header p{
     background: #47bf47;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }

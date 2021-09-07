@@ -46,15 +46,15 @@ function baseForm(){
     return `
     <label>Seleccione el origen del electrodomestico</label>
     <select name="comsuption" id="comsuption">
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
+        <option value="A" id="a">A</option>
+        <option value="B" id="b">B</option>
+        <option value="C" id="c">C</option>
     </select>
     <br>
     <label>Seleccione el origen del electrodomestico</label>
     <select name="origin" id="origin">
-        <option value="nacional">Nacional</option>
-        <option value="importado">Importado</option>
+        <option value="nacional" id='nacional'>Nacional</option>
+        <option value="importado" id='importado'>Importado</option>
     </select>
     `;
 }

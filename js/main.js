@@ -16,11 +16,7 @@ let radioTv = document.querySelector("#tv");
 let radioFridge = document.querySelector("#fridge");
 
 
-buttonSaveProduct.addEventListener('click',()=>{
-    saveProduct()
-})
-
-
+buttonSaveProduct.addEventListener('click',saveProduct)
 radioGeneral.addEventListener('change',changeRenderForm);
 radioTv.addEventListener('change',changeRenderForm);
 radioFridge.addEventListener('change',changeRenderForm);
@@ -45,24 +41,83 @@ function clearForm(element){
 }
 
 
+//Productos agregados
 let misELectrodomesticos = [];
-
-// let electrodomestico = new HomeAppliances("a","nacional")
-// misELectrodomesticos.push(electrodomestico)
-
-// let nevera = new Fridge("a","importado",140)
-// misELectrodomesticos.push(nevera)
-
-
-// let tv = new Tv("b","nacional",60,true);
-// misELectrodomesticos.push(tv)
-
-// let nevera2 = new Fridge("a","nacional",180);
-// misELectrodomesticos.push(nevera2);
 
 
 function saveProduct(){
-    console.log("Enviando form")
+
+    if(radioGeneral.checked){
+        registerGeneral();
+    }else if(radioFridge.checked){
+        registerFridge();
+    }else{
+        registerTv();
+    }
+
+
+}
+
+function registerTv(){
+
+    let consumption = getValueComsuption();
+    let origin = getValueOrigin()
+
+    let inches = document.getElementById("inches").value;
+
+    let tdt = document.getElementById("tdt");
+
+    let isTdt = (tdt.checked)?true:false;
+
+    let tv = new Tv(consumption,origin,inches,isTdt);
+    misELectrodomesticos.push(tv);
+
+    renderList();
+
+}
+
+function registerFridge(){
+    let consumption = getValueComsuption();
+    let origin = getValueOrigin()
+    let capacity = document.getElementById("capacity").value;
+
+    let fridge = new Fridge(consumption, origin, capacity)
+    misELectrodomesticos.push(fridge);
+
+    renderList();
+
+}
+
+function registerGeneral(){
+
+    let consumption = getValueComsuption();
+    let origin = getValueOrigin();
+
+
+    let appliances = new HomeAppliances(consumption,origin);
+    misELectrodomesticos.push(appliances)
+
+    renderList()
+
+}
+
+function getValueOrigin(){
+    let national = document.getElementById("nacional");
+    return (national.selected)? "nacional": "importado";
+}
+
+function getValueComsuption(){
+
+    let consumptionA = document.getElementById("a");
+    let consumptionB = document.getElementById("b");
+
+    if(consumptionA.selected){
+        return "A";
+    }else if(consumptionB.selected){
+        return "B";
+    }else{
+        return "C";
+    }
 
 }
 
@@ -74,6 +129,7 @@ function saveProduct(){
 const renderList = ()=>{
 
     let count=0
+    list.innerHTML = "";
 
     misELectrodomesticos.forEach((product)=>{
 
