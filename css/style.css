@@ -26,7 +26,7 @@ header p{
 }
 
 .title-main{
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .title-product{
@@ -51,4 +51,12 @@ header p{
 .price-total{
     color: rgb(5 197 120);
     font-weight: bold;
+}
+
+.title-form{
+    margin-bottom: 20px;
+}
+
+.my-form > *{
+    margin-bottom: 24px;
 }

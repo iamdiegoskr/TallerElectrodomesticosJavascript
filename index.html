@@ -16,19 +16,27 @@
         <p>App electrodomesticos</p>
     </header>
 
+
     <div class="container-app">
 
-        <!-- <div class="form">
-            <form >
-                <p>Seleccione el tipo de consumo </p>
-                <input type="radio" id="html" name="fav_language" value="HTML">
-                <label for="html">HTML</label><br>
-                <input type="radio" id="css" name="fav_language" value="CSS">
-                <label for="css">CSS</label><br>
-                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                <label for="javascript">JavaScript</label>
+        <div class="form-section">
+            <form class="my-form">
+                <div class="appliance-type">
+                    <h2 class="title-form">De que tipo desea registrar un electrodomestico ?</h2>
+                    <div class="radio">
+                        <input type="radio" id="general" name="fav_language" value="general" checked>
+                        <label for="general">Electrodomestico general</label><br>
+                        <input type="radio" id="fridge" name="fav_language" value="fridge">
+                        <label for="fridge">Nevera</label><br>
+                        <input type="radio" id="tv" name="fav_language" value="tv">
+                        <label for="tv">Televisor</label>
+                    </div>
+                </div>
+                <div id="form-data">
+                </div>
+                <button class="buttonexample" type="button">Guardar</button>
             </form>
-        </div> -->
+        </div>
 
         <section class="section-content" id="content">
             <h2 class="title-main">Lista inventario electrodomesticos</h2>
